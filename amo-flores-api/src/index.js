@@ -9,12 +9,12 @@ const PORT = process.env.PORT || 3007;
 app.use(cors());
 
 // Middleware para analisar o corpo das requisições em JSON
-app.use(express.json()); // Mova esta linha para cima, antes das rotas
+app.use(express.json()); // Análise do corpo das requisições deve vir antes de definir as rotas
 
 // Usando as rotas definidas
 app.use(router);
 
 // Inicia o servidor
-app.listen(PORT, '172.30.5.4', () => {
-    console.log(`Server running at http://172.30.5.4:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`); // Altere '172.30.5.4' para 'localhost'
 });
